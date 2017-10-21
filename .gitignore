@@ -1,0 +1,10 @@
+
+src/caca_heap
+
+*.plist
+
+src/caca_heap.dSYM/Contents/Resources/DWARF/caca_heap
+
+src/shit
+
+src/shit1
