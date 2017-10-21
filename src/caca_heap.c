@@ -825,7 +825,7 @@ static inline void heap_shit_insert(heap_shit *heap_ctx,
 			now);
 
 	heap_ctx->heap_size = heap_size;
-	heap_shit_valida_nodos(heap_ctx);
+//	heap_shit_valida_nodos(heap_ctx);
 }
 
 /*
@@ -949,7 +949,7 @@ static inline void *heap_shit_delete(heap_shit *heap_ctx, natural idx_a_borrar) 
 		caca_log_debug("llave %d tiene valor %u ", lastElement.llave, now);
 	}
 	heap_ctx->heap_size = heap_size;
-	heap_shit_valida_nodos(heap_ctx);
+	//heap_shit_valida_nodos(heap_ctx);
 	return resultado;
 }
 
@@ -1124,9 +1124,10 @@ static inline void caca_heap_main() {
 			heap_shit_borrar_directo(ctx, valor);
 			break;
 		case imprimir_caca_heap_tipo_consulta:
-			valor = ctx->heap[1].llave;
+			valor = (int) heap_shit_borra_torpe(ctx);
 			caca_log_debug("imprimiendo %d", valor)
 			;
+			heap_shit_insertar_valor_unico(ctx, valor);
 			printf("%d\n", valor);
 			break;
 		default:
